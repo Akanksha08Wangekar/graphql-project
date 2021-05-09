@@ -9,10 +9,7 @@ const testSchema = require('./schema/types_schema')
 const cors = require('cors');
 const PORT = process.env.PORT || 4000;
 //mongoose.set('useFindAndModify', false);
-/*
-    mongodb+srv://user1:root@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
-*/
 const app = express(); // Instantiation
 
 mongoose.connect('mongodb+srv://<user>:<password>@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
