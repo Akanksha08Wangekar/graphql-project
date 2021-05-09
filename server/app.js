@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const Schema = require('./schema/schema1')
 const testSchema = require('./schema/types_schema')
 const cors = require('cors');
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 //mongoose.set('useFindAndModify', false);
 /*
     mongodb+srv://user1:root@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -15,7 +15,7 @@ const port = process.env.PORT || 4000;
 */
 const app = express(); // Instantiation
 
-mongoose.connect('mongodb+srv://user1:root@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://user1:root@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', 
 { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify:false} ).then(() => {
     console.log("Connected")
 })
@@ -33,6 +33,6 @@ app.use('/graphql', graphqlHTTP({
     schema: Schema
 }))
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log('Listening to port 4000....')
 })
