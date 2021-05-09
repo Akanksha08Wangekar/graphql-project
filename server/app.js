@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const Schema = require('./schema/schema1')
 const testSchema = require('./schema/types_schema')
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 //mongoose.set('useFindAndModify', false);
 /*
     mongodb+srv://user1:root@course.ob1or.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -34,5 +34,5 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 app.listen(port, () => {
-    console.log('Listening to port 3000....')
+    console.log('Listening to port 4000....')
 })
